@@ -1,0 +1,28 @@
+Now available is a trial version of constant.pm, a Perl pragma to declare
+constants.  Note that some features may be changed in later versions of
+this module.  If you want something changed (or not!)  please let me know.
+
+If everything goes right, you should soon be able to find this module
+on CPAN in the subdirectory authors/id/PHOENIX.
+
+Use of this module requires something beyond Perl 5.003, but I don't
+know what subversion. If you discover that the test suite fails on a
+subversion which isn't caught by the 'require' line, please let me know.
+
+If you have any comments, suggestions, patches, bug reports, coffeecakes,
+complaints, or ideas, please let me know.
+
+    -- Tom Phoenix, <rootbeer@teleport.com>
+
+Issues to consider before the final version is released:
+
+    Is it right that this module's name should be 'constant' with a small
+    'c'?
+
+    Should this module be bundled with Perl? With 5.004? Should it be
+    labelled "experimental"?
+
+    Are any of the bugs (in the BUGS section of the docs, of course)
+    too intolerable?
+
+    Is the documentaion sufficiently clear?

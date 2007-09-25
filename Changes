@@ -1,7 +1,50 @@
-Revision history for Perl extension constant.
+Revision history for constant
 
-0.01  Tue Mar 18 12:44:08 1997
-	- original version; created by Tom Phoenix with
-	  help from and because of a suggestion by
-	  Neil Bowers <neilb@cre.canon.co.uk>
+1.11    2007.09.25    SAPER (Sébastien Aperghis-Tramoni)
+        [CODE] Fixed code and tests so everything work under Perl 5.005.
+        [DOC] Some Pod nits. Added information about current maintainers.
+
+1.10    2007.04.19
+        blead@30980: C3 MRO support (Brandon L Black).
+        blead@30824: Small fix for Symbian (Jarkko Hietaniemi).
+
+1.09    2007.03.13
+        blead@30561: Inform constant.pm about UNITCHECK (Joshua ben Jore).
+
+1.08    2007.02.13
+        blead@30255: Remove some debugging code (Nicholas Clark).
+        blead@26502: Use Internals::inc_sub_generation() to invalidate 
+          cached methods (Nicholas Clark).
+
+1.07    2005.12.26
+        blead@26487: Rework constant.pm to take advantage of the space 
+          savings of proxy constant subroutines whenever it can (Nicholas Clark).
+        blead@26485: Factore caller() call out of the loop (Nicholas Clark).
+
+1.06    2005.12.24
+        blead@26483: Using a hash reference rather than a hash can save a 
+          hash copy (Nicholas Clark).
+
+1.05    2004.11.12
+        blead@23497: Silence an unnecessary warning (Anno Siegel).
+
+1.04    2001.07.29
+        blead@12097, 11473: Major POD rewrite (Ilmari Karonen).
+
+1.03    2001.06.29
+        blead@8240: Declare multiple constants at once (Casey West).
+
+1.02    2000.03.13
+        blead@5702: Use warnings::register (Paul Marquess).
+        blead@5463: Relax restrictions on constant names a bit (M J T Guy).
+        blead@4905: STOP blocks have been renamed to CHECK (Gurusamy Sarathy).
+
+1.01    1999.12.28
+        blead@4718: New version of constant.pm from Tom Phoenix; added Tom's 
+          notes to perldelta; added STOP, DESTROY and AUTOLOAD to specials list
+        blead@2029: Restore sanity to "constant" references (Gurusamy Sarathy).
+
+
+Full history:
+    http://public.activestate.com/cgi-bin/perlbrowse/l/lib/constant.pm
 

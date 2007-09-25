@@ -1,6 +1,11 @@
+Makefile.PL
+Build.PL
 Changes
 MANIFEST
-Makefile.PL
-constant.pm
-test.pl
+META.yml
 README
+lib/constant.pm
+t/00-load.t
+t/constant.t
+t/pod-coverage.t
+t/pod.t

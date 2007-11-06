@@ -13,6 +13,7 @@ WriteMakefile(
     AUTHOR          => 'Sébastien Aperghis-Tramoni <sebastien@aperghis.net>',
     VERSION_FROM    => 'lib/constant.pm',
     ABSTRACT_FROM   => 'lib/constant.pm',
+    INSTALLDIRS     => 'perl',
     PL_FILES        => {},
     PREREQ_PM       => \%prereq,
     dist            => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },

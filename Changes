@@ -1,5 +1,9 @@
 Revision history for constant
 
+1.12    2007.11.06    SAPER (Sébastien Aperghis-Tramoni)
+        [DIST] CPAN-RT#30460: The module must be installed in core, not in
+        site (because it get shadowed). Thanks to Imacat.
+
 1.11    2007.09.25    SAPER (Sébastien Aperghis-Tramoni)
         [CODE] Fixed code and tests so everything work under Perl 5.005.
         [DOC] Some Pod nits. Added information about current maintainers.

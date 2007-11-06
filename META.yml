@@ -1,6 +1,6 @@
 ---
 name: constant
-version: 1.11
+version: 1.12
 author:
   - 'Sébastien Aperghis-Tramoni <sebastien@aperghis.net>'
 abstract: Perl pragma to declare constants
@@ -12,7 +12,7 @@ build_requires:
 provides:
   constant:
     file: lib/constant.pm
-    version: 1.11
+    version: 1.12
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

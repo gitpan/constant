@@ -12,6 +12,7 @@ my $builder = Module::Build->new(
     license             => 'perl',
     dist_author         => 'Sébastien Aperghis-Tramoni <sebastien@aperghis.net>',
     dist_version_from   => 'lib/constant.pm',
+    installdirs         => 'core',
     build_requires      => \%prereq,
     add_to_cleanup      => [ 'constant-*' ],
 );

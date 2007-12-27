@@ -1,10 +1,12 @@
 Revision history for constant
 
+1.14    2007.12.27    SAPER (Sébastien Aperghis-Tramoni)
+        [DIST] CPAN-RT#31627: Specify core install dir in Build.PL. 
+        Thanks to Michael G Schwern.
+
 1.13    2007.12.27    SAPER (Sébastien Aperghis-Tramoni)
         [CODE] Merged changed blead@32338: UNITCHECK is only a keyword 
         post 5.009 (Nicholas Clark).
-        [DIST] CPAN-RT#31627: Specify core install dir in Build.PL. 
-        Thanks to Michael G Schwern.
         [DIST] Copied the sysnopsis into eg/
 
 1.12    2007.11.06    SAPER (Sébastien Aperghis-Tramoni)

@@ -1,5 +1,10 @@
 Revision history for constant
 
+1.15    2007.12.31    SAPER (Sébastien Aperghis-Tramoni)
+        [TEST] Adjusted t/constant.t to how empty prototypes are reported
+        among different versions of Perl (thus fixing the FAIL reports for 
+        Perl 5.8.0 to 5.8.3).
+
 1.14    2007.12.27    SAPER (Sébastien Aperghis-Tramoni)
         [DIST] CPAN-RT#31627: Specify core install dir in Build.PL. 
         Thanks to Michael G Schwern.

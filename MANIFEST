@@ -1,8 +1,8 @@
+MANIFEST
+META.yml
 Makefile.PL
 Build.PL
 Changes
-MANIFEST
-META.yml
 README
 lib/constant.pm
 eg/synopsis.pl

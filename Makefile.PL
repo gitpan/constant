@@ -10,7 +10,7 @@ $prereq{"warnings::compat"} = 0 if $] < 5.006;
 WriteMakefile(
     NAME            => 'constant',
     LICENSE         => 'perl',
-    AUTHOR          => 'Sébastien Aperghis-Tramoni <sebastien@aperghis.net>',
+    AUTHOR          => 'SÃ©bastien Aperghis-Tramoni <sebastien@aperghis.net>',
     VERSION_FROM    => 'lib/constant.pm',
     ABSTRACT_FROM   => 'lib/constant.pm',
     INSTALLDIRS     => 'perl',

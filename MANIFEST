@@ -8,5 +8,6 @@ lib/constant.pm
 eg/synopsis.pl
 t/00-load.t
 t/constant.t
+t/more-tests.t
 t/pod-coverage.t
 t/pod.t

@@ -1,5 +1,9 @@
 Revision history for constant
 
+1.17    2008.10.29    SAPER (Sébastien Aperghis-Tramoni)
+        [TESTS] Moved the TRAILING test from t/constant.t to t/more-tests.t
+        in order to avoid FAIL reports when executed with Test::More 0.82+
+
 1.16    2008.09.21    SAPER (Sébastien Aperghis-Tramoni)
         [DOC] The copyright section is also the license.
         [DOC] Added a SEE ALSO section.

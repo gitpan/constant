@@ -16,8 +16,11 @@ END { @warnings && print STDERR join "\n- ", "accumulated warnings:", @warnings 
 
 
 use strict;
-use Test::More tests => 95;
+use Test::More tests => 101;
 my $TB = Test::More->builder;
+
+my $no_pseudohashes;
+$no_pseudohashes = "pseudohash related test" unless $] < 5.010;
 
 BEGIN { use_ok('constant'); }
 
@@ -118,15 +121,32 @@ my $curr_test = $TB->current_test;
 use constant CSCALAR	=> \"ok 35\n";
 use constant CHASH	=> { foo => "ok 36\n" };
 use constant CARRAY	=> [ undef, "ok 37\n" ];
+use constant CPHASH	=> [ { foo => 1 }, "ok 38\n" ];
 use constant CCODE	=> sub { "ok $_[0]\n" };
 
 my $output = $TB->output ;
 print $output ${+CSCALAR};
 print $output CHASH->{foo};
 print $output CARRAY->[1];
-print $output CCODE->($curr_test+4);
 
-$TB->current_test($curr_test+4);
+$TB->current_test($curr_test+3);
+
+SKIP: {
+    skip $no_pseudohashes, 1 if $no_pseudohashes;
+    # You can't even think about this post 5.8.x. Well, you can. But you get
+    # Constant is not a HASH reference at ...
+    eval 'print $output CPHASH->{foo}; 1' or die $@;
+}
+print $output CCODE->($curr_test+5);
+
+$TB->current_test($curr_test+5);
+
+SKIP: {
+    skip $no_pseudohashes, 1 if $no_pseudohashes;
+    skip "doesn't work on 5.5.x", 1 if $[ < 5.006;
+    eval q{ CPHASH->{bar} };
+    like $@, qr/^No such pseudo-hash field/, "test missing pseudo-hash field";
+}
 
 eval q{ CCODE->{foo} };
 ok scalar($@ =~ /^Constant is not a HASH/);
@@ -259,12 +279,21 @@ use constant {
 	AGES   => { John => 33, Jane => 28, Sally => 3 },
 	RFAM   => [ [ qw( John Jane Sally ) ] ],
 	SPIT   => sub { shift },
+	PHFAM  => [ { John => 1, Jane => 2, Sally => 3 }, 33, 28, 3 ],
 };
 
 is @{+FAMILY}, THREE;
 is @{+FAMILY}, @{RFAM->[0]};
 is FAMILY->[2], RFAM->[0]->[2];
 is AGES->{FAMILY->[1]}, 28;
+SKIP: {
+    skip $no_pseudohashes, 4 if $no_pseudohashes;
+    eval "no warnings 'deprecated'; is PHFAM->{John}, AGES->{John}; 1"
+	or die $@;
+    is PHFAM->[3], AGES->{FAMILY->[2]};
+    is @{+PHFAM}, SPIT->(THREE+1);
+    is AGES->{FAMILY->[THREE-1]}, PHFAM->[THREE];
+}
 is THREE**3, SPIT->(@{+FAMILY}**3);
 
 # Allow name of digits/underscores only if it begins with underscore

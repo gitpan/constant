@@ -1,5 +1,13 @@
 Revision history for constant
 
+1.18    2009.08.18    SAPER (Sébastien Aperghis-Tramoni)
+        [CODE] Optimisation: Generate perl version-dependent regexps once,
+        rather than every call to import (Nicholas Clark).
+        [CODE] Optimisation: Convert perl version check in import() from
+        run time to compile time (Nicholas Clark).
+        [TESTS] Re-added pseudohashes tests that were removed at some point
+        from bleadperl (Nicholas Clark).
+
 1.17    2008.10.29    SAPER (Sébastien Aperghis-Tramoni)
         [TESTS] Moved the TRAILING test from t/constant.t to t/more-tests.t
         in order to avoid FAIL reports when executed with Test::More 0.82+

@@ -1,6 +1,6 @@
 ---
 name: constant
-version: 1.18
+version: 1.19
 author:
   - 'Sébastien Aperghis-Tramoni <sebastien@aperghis.net>'
 abstract: Perl pragma to declare constants
@@ -10,12 +10,12 @@ resources:
 build_requires:
   Test::More: 0
 configure_requires:
-  Module::Build: 0.340201
+  Module::Build: 0.35
 provides:
   constant:
     file: lib/constant.pm
-    version: 1.18
-generated_by: Module::Build version 0.340201
+    version: 1.19
+generated_by: Module::Build version 0.35
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4

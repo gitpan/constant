@@ -4,7 +4,7 @@ use strict;
 use warnings::register;
 
 use vars qw($VERSION %declared);
-$VERSION = '1.18';
+$VERSION = '1.19';
 
 #=======================================================================
 
@@ -45,6 +45,7 @@ sub import {
     my $constants;
     my $multiple  = ref $_[0];
     my $pkg = caller;
+    my $flush_mro;
     my $symtab;
 
     if (_CAN_PCS) {
@@ -116,14 +117,16 @@ sub import {
 	    $declared{$full_name}++;
 	    if ($multiple || @_ == 1) {
 		my $scalar = $multiple ? $constants->{$name} : $_[0];
-		if ($symtab && !exists $symtab->{$name}) {
+		# The constant serves to optimise this entire block out on
+		# 5.8 and earlier.
+		if (_CAN_PCS && $symtab && !exists $symtab->{$name}) {
 		    # No typeglob yet, so we can use a reference as space-
 		    # efficient proxy for a constant subroutine
 		    # The check in Perl_ck_rvconst knows that inlinable
 		    # constants from cv_const_sv are read only. So we have to:
 		    Internals::SvREADONLY($scalar, 1);
 		    $symtab->{$name} = \$scalar;
-		    mro::method_changed_in($pkg);
+		    ++$flush_mro;
 		} else {
 		    *$full_name = sub () { $scalar };
 		}
@@ -135,6 +138,8 @@ sub import {
 	    }
 	}
     }
+    # Flush the cache exactly once if we make any direct symbol table changes.
+    mro::method_changed_in($pkg) if _CAN_PCS && $flush_mro;
 }
 
 1;

@@ -1,3 +1,4 @@
+use 5.005;
 use strict;
 use Module::Build;
 
@@ -14,6 +15,9 @@ my $builder = Module::Build->new(
     dist_version_from   => 'lib/constant.pm',
     installdirs         => 'core',
     build_requires      => \%prereq,
+    configure_requires  => {
+        'Module::Build' => '0.2808',
+    },
     add_to_cleanup      => [ 'constant-*' ],
 );
 

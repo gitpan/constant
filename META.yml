@@ -1,21 +1,21 @@
 ---
-name: constant
-version: 1.19
+abstract: 'Perl pragma to declare constants'
 author:
   - 'Sébastien Aperghis-Tramoni <sebastien@aperghis.net>'
-abstract: Perl pragma to declare constants
-license: perl
-resources:
-  license: http://dev.perl.org/licenses/
 build_requires:
   Test::More: 0
 configure_requires:
-  Module::Build: 0.35
-provides:
-  constant:
-    file: lib/constant.pm
-    version: 1.19
-generated_by: Module::Build version 0.35
+  Module::Build: 0.2808
+generated_by: 'Module::Build version 0.3607'
+license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
+name: constant
+provides:
+  constant:
+    file: lib/constant.pm
+    version: 1.20
+resources:
+  license: http://dev.perl.org/licenses/
+version: 1.20

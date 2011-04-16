@@ -1,5 +1,11 @@
 Revision history for constant
 
+1.20    2011.04.16    SAPER (Sébastien Aperghis-Tramoni) #PerlQA2011
+        [CODE] Updated from bleadperl:
+         - [perl #68640] Wrong error for undef constant name (Zefram).
+        [DIST] CPAN-RT #66727: Add explicit configure_requires to Build.PL
+        (David Golden).
+
 1.19    2009.09.12    SAPER (Sébastien Aperghis-Tramoni)
         [CODE] Optimisation: Avoid unnecessary flushing of the caller
         package's MRO cache (Nicholas Clark).

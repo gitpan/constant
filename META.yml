@@ -15,7 +15,7 @@ name: constant
 provides:
   constant:
     file: lib/constant.pm
-    version: 1.20
+    version: 1.21
 resources:
   license: http://dev.perl.org/licenses/
-version: 1.20
+version: 1.21

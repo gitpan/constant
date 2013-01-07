@@ -1,5 +1,13 @@
 Revision history for constant
 
+1.24    2013.01.07    SAPER (Sébastien Aperghis-Tramoni)
+        [CODE] Updated from bleadperl:
+         - Disable the UTF8 downgrade when unnecessary (Father Chrysostomos)
+         - Restore compatibility with Perl 5.8 (Sébastien Aperghis-Tramoni)
+         - Skip t/utf8.t on Perl before 5.8.4 (Sébastien Aperghis-Tramoni)
+        [DIST] Perl-RT #114050: Added meta-information in Makefile.PL to
+        reflect that the module is maintained by P5P.
+
 1.21    2011.04.18    SAPER (Sébastien Aperghis-Tramoni) #PerlQA2011
         [CODE] Updated from bleadperl:
          - Make Unicode constants under use utf8 work again (Father Chrysostomos)

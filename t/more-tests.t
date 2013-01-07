@@ -1,16 +1,9 @@
-#!./perl -T
-
-BEGIN {
-    if ($ENV{PERL_CORE}) {
-        chdir 't' if -d 't';
-        @INC = '../lib';
-    }
-}
-
+#!perl -T
 use strict;
 use warnings;
 use vars qw{ @warnings };
 use Test::More;
+
 
 BEGIN {
     plan skip_all => "Author tests" unless $ENV{AUTHOR_MODE};

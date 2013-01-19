@@ -1,5 +1,9 @@
 Revision history for constant
 
+1.25    2013.01.19    SAPER (Sébastien Aperghis-Tramoni)
+        [CODE] Updated from bleadperl:
+         - Remove 5.6-isms (Sébastien Aperghis-Tramoni)
+
 1.24    2013.01.07    SAPER (Sébastien Aperghis-Tramoni)
         [CODE] Updated from bleadperl:
          - Disable the UTF8 downgrade when unnecessary (Father Chrysostomos)

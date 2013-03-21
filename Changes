@@ -1,5 +1,11 @@
 Revision history for constant
 
+1.27    2013.03.21    SAPER (Sébastien Aperghis-Tramoni)
+        [CODE] Updated from bleadperl:
+         - Remove a reference to a non-existent module (Karl Williamson)
+         - Make utf8 downgrading version dependent in order to avoid
+           unconditional loading of utf8_heavy.pl (Brad Gilbert)
+
 1.25    2013.01.19    SAPER (Sébastien Aperghis-Tramoni)
         [CODE] Updated from bleadperl:
          - Remove 5.6-isms (Sébastien Aperghis-Tramoni)
